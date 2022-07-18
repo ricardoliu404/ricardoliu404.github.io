@@ -1,7 +1,19 @@
 
-navigator.geolocation.getCurrentPosition(res => {
-    var longitude = res.coords.longitude;
-    var latitude = res.coords.latitude;
-    const weatherfmt = `http://www.7timer.info/bin/astro.php?lon=${longitude}&lat=${latitude}&ac=0&lang=zh-CN&unit=metric&tzshift=0`;
-    document.getElementById("xyz").src = weatherfmt;
-})
+function renderJson() {
+    console.log($('#json-input').html())
+    try {
+      var input = eval('(' + $('#json-input').html() + ')');
+    }
+    catch (error) {
+      return alert("Cannot eval JSON: " + error);
+    }
+    var options = {
+      collapsed: $('#collapsed').is(':checked'),
+      rootCollapsable: $('#root-collapsable').is(':checked'),
+      withQuotes: $('#with-quotes').is(':checked'),
+      withLinks: $('#with-links').is(':checked')
+    };
+    $('#json-renderer').jsonViewer(input, options);
+}
+
+$('#btn-json-viewer').click(renderJson);

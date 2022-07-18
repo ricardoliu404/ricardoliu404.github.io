@@ -3,13 +3,34 @@
 <head>
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>personal page for ricardoliu</title>
+  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+  <title>ricardoliu-toolbox</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <script type="text/javascript" src='main.js'></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery.json-viewer.js"></script>
+    <link href="css/jquery.json-viewer.css" type="text/css" rel="stylesheet">
+  <!-- <script type="text/javascript" src='main.js'></script> -->
 </head>
 <body bgcolor="#000000">
-  <p style="color: #ffffff;">simple weather report</p>
-  <img id="xyz" src="">
+  <div  class="container">
+    <div class="row">
+      <p style="font-family: 'Courier New', Courier, monospace;">simple json formatter</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 border" contenteditable="true" id="json-input">col-sm-4</div>
+      <div class="col-sm-8 border" >
+        <pre id="json-renderer"></pre>
+      </div>
+    </div>
+  </div>
+  <button id="btn-json-viewer" title="run jsonViewer()">Transform to HTML</button>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    var js = document.createElement("script")
+    js.src = "main.js?ran=" + Math.random()
+    document.body.appendChild(js)
+  </script>
 </body>
 </html>
