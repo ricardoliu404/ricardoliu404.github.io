@@ -1,8 +1,11 @@
 
 function renderJson() {
-    console.log($('#json-input').html())
+ if ($('#json-input').val().length==0){
+    alert("please input json")
+    return
+ }
     try {
-      var input = eval('(' + $('#json-input').html() + ')');
+      var input = eval('(' + $('#json-input').val() + ')');
     }
     catch (error) {
       return alert("Cannot eval JSON: " + error);
@@ -17,3 +20,11 @@ function renderJson() {
 }
 
 $('#btn-json-viewer').click(renderJson);
+
+
+
+// $('#json-input').bind('input propertychange', function(){  
+//     // var length = $("#json-input").val().length;
+//     // console.log(length);
+//     renderJson();
+// });  

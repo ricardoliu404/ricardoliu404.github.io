@@ -19,13 +19,24 @@
       <p style="font-family: 'Courier New', Courier, monospace;">simple json formatter</p>
     </div>
     <div class="row">
-      <div class="col-sm-4 border" contenteditable="true" id="json-input">col-sm-4</div>
-      <div class="col-sm-8 border" >
+      <div class="large-12">
+        <div class="form-group shadow-textarea">
+          <textarea class="form-control z-depth-1" id="json-input" rows="10" placeholder="json here..." style="font-family: 'Courier New', Courier, monospace;"></textarea>
+        </div>
+      </div>
+
+      
+    </div>
+    
+    <button type="button" id="btn-json-viewer" class="btn btn-primary">FORMAT</button>
+    
+    <div class="row">
+      <div class="large-12" >
         <pre id="json-renderer"></pre>
       </div>
     </div>
   </div>
-  <button id="btn-json-viewer" title="run jsonViewer()">Transform to HTML</button>
+  <!-- <button id="btn-json-viewer" title="run jsonViewer()">Transform to HTML</button> -->
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript">
     var js = document.createElement("script")
